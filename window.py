@@ -1,5 +1,22 @@
 from tkinter import *
 
+count  = 0
+def click():
+    global count 
+    count += 1
+    print(count)
+
+def submit():
+    text = entry.get()
+    print(text)
+    entry.config(state=DISABLED)
+
+def delete():
+    entry.delete(0, END)
+
+def backspace():
+    entry.delete(len(entry.get())-1, END)
+
 window = Tk() # Instantiate an instance of a window
 window.geometry('500x500')
 window.title('PROADE CODE')
@@ -26,12 +43,6 @@ label = Label(window,
 # label.pack()
 # label.config(background='red')
 
-count  = 0
-def click():
-    global count 
-    count += 1
-    print(count)
-
 button = Button(window, 
                 text='Click',
                 command=click,
@@ -45,6 +56,19 @@ button = Button(window,
                 )
 # button.pack()
 
+entry = Entry(window,
+              font=('Arail', 50),
+              show='*')
+entry.insert(0, 'PROADE')
+entry.pack(side=LEFT)
 
+submit_button = Button(window, text='Submit', command=submit)
+submit_button.pack(side=RIGHT)
+
+delete_button = Button(window, text='Delete', command=delete)
+delete_button.pack(side=RIGHT)
+
+back_button = Button(window, text='Backspace', command=backspace)
+back_button.pack(side=RIGHT)
 
 window.mainloop() # Place window on a computer screen, listen for event
