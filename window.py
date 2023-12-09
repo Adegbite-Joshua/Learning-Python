@@ -23,7 +23,28 @@ label = Label(window,
             #   compound='bottom',
               )
 # label.place(x=0, y=0)
-label.pack()
+# label.pack()
 # label.config(background='red')
+
+count  = 0
+def click():
+    global count 
+    count += 1
+    print(count)
+
+button = Button(window, 
+                text='Click',
+                command=click,
+                font=('Comic Sans', 30),
+                fg='green',
+                activeforeground='green',
+                activebackground='gold',
+                state=ACTIVE,
+                # image=photo,
+                # compound='top'
+                )
+# button.pack()
+
+
 
 window.mainloop() # Place window on a computer screen, listen for event
