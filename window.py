@@ -17,6 +17,13 @@ def delete():
 def backspace():
     entry.delete(len(entry.get())-1, END)
 
+def display():
+    if (x.get()):
+        print('You agree')
+    else:
+        print('You dont agree :(')
+
+
 window = Tk() # Instantiate an instance of a window
 window.geometry('500x500')
 window.title('PROADE CODE')
@@ -56,19 +63,31 @@ button = Button(window,
                 )
 # button.pack()
 
-entry = Entry(window,
-              font=('Arail', 50),
-              show='*')
-entry.insert(0, 'PROADE')
-entry.pack(side=LEFT)
+# entry = Entry(window,
+#               font=('Arail', 50),
+#               show='*')
+# entry.insert(0, 'PROADE')
+# entry.pack(side=LEFT)
 
-submit_button = Button(window, text='Submit', command=submit)
-submit_button.pack(side=RIGHT)
+# submit_button = Button(window, text='Submit', command=submit)
+# submit_button.pack(side=RIGHT)
 
-delete_button = Button(window, text='Delete', command=delete)
-delete_button.pack(side=RIGHT)
+# delete_button = Button(window, text='Delete', command=delete)
+# delete_button.pack(side=RIGHT)
 
-back_button = Button(window, text='Backspace', command=backspace)
-back_button.pack(side=RIGHT)
+# back_button = Button(window, text='Backspace', command=backspace)
+# back_button.pack(side=RIGHT)
+
+x = BooleanVar()
+check_button = Checkbutton(window,
+                           text='I agree to this condion',
+                           variable=x,
+                           onvalue=True,
+                           offvalue=False,
+                           command=display,
+                           font=('Arial', 20),
+                           fg='green',
+                           bg='red')
+check_button.pack()
 
 window.mainloop() # Place window on a computer screen, listen for event
