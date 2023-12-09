@@ -18,7 +18,7 @@ details = [
 # map(print_number, numbers)
 for i in numbers:
     print(i, end=' ')
-# print()
+print()
 
 for detail in details:
     print("{} using {} stack".format(detail["name"], detail["stack"]))
@@ -57,6 +57,10 @@ drink.start()
 re = threading.Thread(target=read, args=())
 re.start()
 
+eat.join()
+drink.join()
+re.join()
 
 print(threading.active_count())
 print(threading.Thread())
+print(time.perf_counter())
