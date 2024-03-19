@@ -97,3 +97,12 @@ a = np.array([[1,2,3,4,5],
 
 # print(number)
 
+# np.save('myarray.npy', a)
+# a = np.load('myarray.npy')
+# print(a)
+
+
+# np.savetxt('myarray.csv', a, delimiter=',')
+a = np.loadtxt('myarray.csv', delimiter=',', dtype='<U11')
+
+print(a)
