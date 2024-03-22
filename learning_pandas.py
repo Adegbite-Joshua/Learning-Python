@@ -39,6 +39,14 @@ df = pd.read_csv('pokemon_data.csv')
 # print(df.head(5))
 # df = df.drop(columns=['Total'])
 df['Total'] = df.iloc[:,4:10].sum(axis=1)
+# print(df)
 
-print(df)
+cols = list(df.columns.values)
+df = df[cols[0:4] + [cols[-1]] + cols[4: -2]]
+
+# print(df.head(5))
+# df.to_csv('modified.csv', index=False)
+df.to_excel('modified.xlsx', index=False)
+# df.to_csv('modified.txt', index=False, sep='\t')
+
   
