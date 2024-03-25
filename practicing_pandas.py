@@ -13,4 +13,6 @@ df.loc[ df['Type 1'].str.lower() == 'bug', 'Legendary'] = True
 # print(df.iloc[4,3])
 # print(df.iloc[4,3].dtype)
 # print(df.dtypes)
+# df = df.drop(columns=['#'])
 print(df.head(15))
+df.to_csv('practice_data.csv', index=False)
