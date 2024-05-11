@@ -93,3 +93,6 @@ for df in pd.read_csv('modified.csv', chunksize=5):
     new_df = pd.concat([new_df, results])
     
 print(new_df.head(10))
+
+import os
+print("cpu", os.cpu_count())
